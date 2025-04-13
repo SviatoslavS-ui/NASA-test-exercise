@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API TestExercise", "API Tes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API_TestExercise.Tests", "..\API_TestExercise.Tests\API_TestExercise.Tests.csproj", "{B95AE329-312C-4B3D-B445-7C7AE9096475}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CI-CD Configuration", "..\CI-CD Configuration\CI-CD Configuration.csproj", "{DBBA2B3C-A1D5-43E2-9A26-F4E23264AD36}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UItests", "..\UItests\UItests.csproj", "{9DF0C5C6-2FA1-4089-8F7B-E791B9E24AEE}"
 EndProject
 Global
@@ -25,10 +23,6 @@ Global
 		{B95AE329-312C-4B3D-B445-7C7AE9096475}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B95AE329-312C-4B3D-B445-7C7AE9096475}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B95AE329-312C-4B3D-B445-7C7AE9096475}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DBBA2B3C-A1D5-43E2-9A26-F4E23264AD36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DBBA2B3C-A1D5-43E2-9A26-F4E23264AD36}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DBBA2B3C-A1D5-43E2-9A26-F4E23264AD36}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DBBA2B3C-A1D5-43E2-9A26-F4E23264AD36}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9DF0C5C6-2FA1-4089-8F7B-E791B9E24AEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9DF0C5C6-2FA1-4089-8F7B-E791B9E24AEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DF0C5C6-2FA1-4089-8F7B-E791B9E24AEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
