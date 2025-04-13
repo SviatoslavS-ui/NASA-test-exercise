@@ -1,0 +1,27 @@
+# Ignore Visual Studio local settings
+**/.vs/
+
+# Ignore build output
+bin/
+obj/
+TestResults/
+*.user
+*.suo
+
+# Ignore Playwright stuff
+playwright-report/
+*.playwright/
+
+# Ignore environment files
+.env
+*.env.*
+
+# Ignore crash logs, temp files, etc.
+*.log
+.vscode/
+*.DS_Store
+Thumbs.db
+
+# Ignore any coverage output
+coverage/
+*.lcov

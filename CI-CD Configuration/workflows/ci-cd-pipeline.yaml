@@ -1,0 +1,44 @@
+name: Run API and UI Tests
+
+on:
+  push:
+    branches:
+      - main
+      - '**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Checkout the repository
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Step 2: Set up .NET
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 8.0.x
+
+    # Step 3: Install Playwright dependencies
+    - name: Install Playwright dependencies
+      run: npx playwright install-deps
+
+    # Step 4: Restore .NET dependencies
+    - name: Restore .NET dependencies
+      run: dotnet restore
+
+    # Step 5: Run API and UI tests in headless mode
+    - name: Run tests
+      env:
+        PLAYWRIGHT_HEADLESS: "1" # Ensures Playwright runs in headless mode
+      run: dotnet test --logger "trx;LogFileName=test_results.trx"
+
+    # Step 6: Upload test results (optional)
+    - name: Upload test results
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: test-results
+        path: '**/TestResults/*.trx'

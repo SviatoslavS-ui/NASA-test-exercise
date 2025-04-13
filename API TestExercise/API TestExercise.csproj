@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>API_TestExercise</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+	<ItemGroup>
+		<!-- Dependencies for HTTP requests and JSON handling -->
+		<PackageReference Include="Gherkin" Version="32.1.1" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.13.0" />
+		<PackageReference Include="Microsoft.Playwright" Version="1.51.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="SpecFlow" Version="3.9.74" />
+		<PackageReference Include="System.Text.Json" Version="9.0.4" />
+
+		<!-- Configuration and Logging -->
+		<PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.4" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.4" />
+		<PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.4" />
+
+		<!-- RestSharp for API calls -->
+		<PackageReference Include="RestSharp" Version="112.1.0" />
+	</ItemGroup>
+</Project>
