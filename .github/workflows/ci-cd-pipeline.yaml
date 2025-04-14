@@ -21,21 +21,29 @@ jobs:
       with:
         dotnet-version: 8.0.x
 
-    # Step 3: Install Playwright dependencies and browsers
+    # Step 3: Install Playwright dependencies
     - name: Install Playwright dependencies
       run: |
         npx playwright install-deps
         dotnet tool install --global Microsoft.Playwright.CLI
         cd "API TestExercise"
         dotnet add package Microsoft.Playwright
-        dotnet build
-        playwright install
 
     # Step 4: Restore .NET dependencies
     - name: Restore .NET dependencies
       run: dotnet restore "API TestExercise/NASAapiTestSolution.sln"
 
-    # Step 5: Run API and UI tests in headless mode
+    # Step 5: Build solution
+    - name: Build solution
+      run: dotnet build "API TestExercise/NASAapiTestSolution.sln"
+
+    # Step 6: Install Playwright browsers
+    - name: Install Playwright browsers
+      run: |
+        cd "API TestExercise"
+        playwright install
+
+    # Step 7: Run API and UI tests in headless mode
     - name: Run tests
       env:
         HEADLESS: "true" # Ensures Playwright runs in headless mode in CI/CD
