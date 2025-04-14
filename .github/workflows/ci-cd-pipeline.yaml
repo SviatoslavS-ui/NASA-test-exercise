@@ -27,6 +27,8 @@ jobs:
         npx playwright install-deps
         dotnet tool install --global Microsoft.Playwright.CLI
         cd "API TestExercise"
+        dotnet add package Microsoft.Playwright
+        dotnet build
         playwright install
 
     # Step 4: Restore .NET dependencies
