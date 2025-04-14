@@ -49,4 +49,4 @@ jobs:
         HEADLESS: "true"
         PLAYWRIGHT_HEADLESS: "true"
         DOTNET_PLAYWRIGHT_HEADLESS: "true"
-      run: dotnet test "API TestExercise/NASAapiTestSolution.sln" --settings:.runsettings
+      run: dotnet test "API TestExercise/NASAapiTestSolution.sln" --settings:"API TestExercise/.runsettings"
