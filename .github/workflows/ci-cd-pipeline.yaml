@@ -43,10 +43,8 @@ jobs:
         cd "API TestExercise"
         playwright install
 
-    # Step 7: Run API and UI tests in headless mode
+    # Step 7: Run API and UI tests
     - name: Run tests
       env:
         HEADLESS: "true"
-        PLAYWRIGHT_HEADLESS: "true"
-        DOTNET_PLAYWRIGHT_HEADLESS: "true"
       run: dotnet test "API TestExercise/NASAapiTestSolution.sln" --settings:"API TestExercise/.runsettings"

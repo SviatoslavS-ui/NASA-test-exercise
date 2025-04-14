@@ -12,7 +12,7 @@ namespace UItests.StepDefinitions
         [BeforeScenario]
         public async Task InitializePlaywright(ScenarioContext scenarioContext)
         {
-            var isHeadless = Environment.GetEnvironmentVariable("HEADLESS")?.ToLower() == "true";
+            var isHeadless = (Environment.GetEnvironmentVariable("HEADLESS")?.ToLower() ?? "true") == "true";
             _playwright = await Playwright.CreateAsync();
             _browser = await _playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions { Headless = isHeadless });
             var page = await _browser.NewPageAsync();
