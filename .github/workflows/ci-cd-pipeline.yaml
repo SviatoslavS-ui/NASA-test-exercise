@@ -33,12 +33,4 @@ jobs:
     - name: Run tests
       env:
         PLAYWRIGHT_HEADLESS: "1" # Ensures Playwright runs in headless mode
-      run: dotnet test --logger "trx;LogFileName=test_results.trx"
-
-    # Step 6: Upload test results (optional)
-    - name: Upload test results
-      if: always()
-      uses: actions/upload-artifact@v3
-      with:
-        name: test-results
-        path: '**/TestResults/*.trx'
+      run: dotnet test
