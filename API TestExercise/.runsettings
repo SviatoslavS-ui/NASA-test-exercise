@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+  <RunConfiguration>
+    <EnvironmentVariables>
+      <PLAYWRIGHT_HEADLESS>1</PLAYWRIGHT_HEADLESS>
+    </EnvironmentVariables>
+  </RunConfiguration>
+  <Playwright>
+    <BrowserName>chromium</BrowserName>
+    <LaunchOptions>
+      <Headless>true</Headless>
+      <Args>
+        <Args>--no-sandbox</Args>
+        <Args>--disable-dev-shm-usage</Args>
+      </Args>
+    </LaunchOptions>
+  </Playwright>
+</RunSettings> 
