@@ -27,10 +27,10 @@ jobs:
 
     # Step 4: Restore .NET dependencies
     - name: Restore .NET dependencies
-      run: dotnet restore
+      run: dotnet restore "API TestExercise/API TestExercise.sln"
 
     # Step 5: Run API and UI tests in headless mode
     - name: Run tests
       env:
-        PLAYWRIGHT_HEADLESS: "1" # Ensures Playwright runs in headless mode
-      run: dotnet test
+        HEADLESS: "true" # Ensures Playwright runs in headless mode in CI/CD
+      run: dotnet test "API TestExercise/API TestExercise.sln"
