@@ -21,9 +21,12 @@ jobs:
       with:
         dotnet-version: 8.0.x
 
-    # Step 3: Install Playwright dependencies
+    # Step 3: Install Playwright dependencies and browsers
     - name: Install Playwright dependencies
-      run: npx playwright install-deps
+      run: |
+        npx playwright install-deps
+        dotnet tool install --global Microsoft.Playwright.CLI
+        playwright install
 
     # Step 4: Restore .NET dependencies
     - name: Restore .NET dependencies
