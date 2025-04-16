@@ -1,0 +1,95 @@
+[33mcommit 7d9a982db811805908ab3e496aaa28ea99cdee15[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Sviatoslav Shunko <Sviatoslav_Shunko@epam.com>
+Date:   Wed Apr 16 10:39:27 2025 +0100
+
+    project refactored
+
+[33mcommit e8d8d0db23348a2c75ff3da22d52755bc7407ad0[m
+Author: Sviatoslav Shunko <Sviatoslav_Shunko@epam.com>
+Date:   Wed Apr 16 10:28:22 2025 +0100
+
+    project refactored
+
+[33mcommit 0ce448d36860a3f6be8c2e0d8b9f3c3581a0b601[m
+Author: Sviatoslav Shunko <Sviatoslav_Shunko@epam.com>
+Date:   Mon Apr 14 10:49:11 2025 +0100
+
+    yaml final adjustment
+
+[33mcommit 073f22ff1f27e1c8dbd9b07c740d1cc5b48fdd47[m
+Author: Sviatoslav Shunko <Sviatoslav_Shunko@epam.com>
+Date:   Mon Apr 14 10:30:50 2025 +0100
+
+    yaml final adjustment
+
+[33mcommit 3d5076a706581b3a230374d210c4a34f81e7a63e[m
+Author: Sviatoslav Shunko <Sviatoslav_Shunko@epam.com>
+Date:   Mon Apr 14 10:19:14 2025 +0100
+
+    yaml final adjustment
+
+[33mcommit 6057e6d586e91a8a0802250b948617b50c7aa2e9[m
+Author: Sviatoslav Shunko <Sviatoslav_Shunko@epam.com>
+Date:   Mon Apr 14 10:03:20 2025 +0100
+
+    yaml final adjustment
+
+[33mcommit 4d29e6fbcdaf7d67f13ed69343591b89ecb9c7eb[m
+Author: Sviatoslav Shunko <Sviatoslav_Shunko@epam.com>
+Date:   Mon Apr 14 09:56:56 2025 +0100
+
+    yaml final adjustment
+
+[33mcommit 37474c8f7108c3a0f699dc43ddb8f4b84156a030[m
+Author: Sviatoslav Shunko <Sviatoslav_Shunko@epam.com>
+Date:   Mon Apr 14 09:48:57 2025 +0100
+
+    yaml final adjustment
+
+[33mcommit f7ecf96c76f5611e5769278e8ace1a75cdcb54e5[m
+Author: Sviatoslav Shunko <Sviatoslav_Shunko@epam.com>
+Date:   Mon Apr 14 09:42:16 2025 +0100
+
+    yaml final adjustment
+
+[33mcommit 451fb5f78d8f3561dee3e771b55c2cbf5b750532[m
+Author: Sviatoslav Shunko <Sviatoslav_Shunko@epam.com>
+Date:   Mon Apr 14 09:30:25 2025 +0100
+
+    yaml final adjustment
+
+[33mcommit 8c681a1371d4ecc91202a332500ecf182d0098b3[m
+Author: Sviatoslav Shunko <Sviatoslav_Shunko@epam.com>
+Date:   Mon Apr 14 09:26:27 2025 +0100
+
+    yaml final adjustment
+
+[33mcommit 233375ba3eaf770b16f123551e99108bfe454b8b[m
+Author: Sviatoslav Shunko <Sviatoslav_Shunko@epam.com>
+Date:   Mon Apr 14 09:09:15 2025 +0100
+
+    yaml final
+
+[33mcommit d564ecbc5ccec626ca8aed888c5e4cc89da02019[m
+Author: Sviatoslav Shunko <Sviatoslav_Shunko@epam.com>
+Date:   Mon Apr 14 09:04:02 2025 +0100
+
+    yaml final adjustment
+
+[33mcommit a50acfaf2fc8ca3cdfba82fe207a7dd8714dcd7b[m
+Author: Sviatoslav Shunko <Sviatoslav_Shunko@epam.com>
+Date:   Mon Apr 14 08:34:40 2025 +0100
+
+    yaml modified
+
+[33mcommit 84e4c6c81ef65b6aa07a9b35ad8878c36d3a938b[m
+Author: Sviatoslav Shunko <Sviatoslav_Shunko@epam.com>
+Date:   Sun Apr 13 19:11:22 2025 +0100
+
+    Add GitHub Actions workflow for CI/CD
+
+[33mcommit 62fbbbcd8db3535df2f439c5ffa7f6fe19e4e4af[m
+Author: Sviatoslav Shunko <Sviatoslav_Shunko@epam.com>
+Date:   Sun Apr 13 19:02:08 2025 +0100
+
+    initial commit

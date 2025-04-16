@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "API TestExercise": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "HEADLESS": "false"
+      }
+    }
+  }
+}

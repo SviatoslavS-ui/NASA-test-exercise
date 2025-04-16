@@ -3,7 +3,8 @@ using API_TestExercise.Services;
 using TechTalk.SpecFlow;
 using API_TestExercise.Tests.Utilities;
 using System.Net;
-
+using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Configuration;
 
 namespace API_TestExercise.Tests.StepDefinitions
 {
@@ -13,10 +14,17 @@ namespace API_TestExercise.Tests.StepDefinitions
         private readonly NASAapiService _nasaApiService;       
 
         public CMEApiSteps()
-        {            
-            _nasaApiService = new NASAapiService();
+        { 
+            // Initialize the NASA API service with the configuration from appsettings.json
+            _nasaApiService = new NASAapiService(Options.Create(
+                new ConfigurationBuilder()
+                    .SetBasePath(Directory.GetCurrentDirectory())
+                    .AddJsonFile("appsettings.json")
+                    .Build()
+                    .GetSection("NASA")
+                    .Get<NASAApiOptions>()
+            ));
         }
-
 
         [Then(@"the response should return HTTP 200 with a non-empty list")]
         public async Task ThenTheResponseShouldReturnHttp200WithANonEmptyList()

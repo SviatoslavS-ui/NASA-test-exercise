@@ -3,6 +3,8 @@ using API_TestExercise.Models;
 using API_TestExercise.Services;
 using API_TestExercise.Tests.Utilities;
 using TechTalk.SpecFlow;
+using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Configuration;
 
 namespace API_TestExercise.Tests.StepDefinitions
 {
@@ -13,7 +15,15 @@ namespace API_TestExercise.Tests.StepDefinitions
 
         public FLRApiSteps()
         {            
-            _nasaApiService = new NASAapiService();
+            // Initialize the NASA API service with the configuration from appsettings.json
+            _nasaApiService = new NASAapiService(Options.Create(
+                new ConfigurationBuilder()
+                    .SetBasePath(Directory.GetCurrentDirectory())
+                    .AddJsonFile("appsettings.json")
+                    .Build()
+                    .GetSection("NASA")
+                    .Get<NASAApiOptions>()
+            ));
         }
 
         [Then(@"the response should return HTTP 200 with flare data")]
@@ -30,7 +40,6 @@ namespace API_TestExercise.Tests.StepDefinitions
             // Invalid date range: startDate is missed
             var response = await _nasaApiService.GetFLRDataAsync("invalid", "2025-04-12");
 
-            // Convert the response to ApiResponse<object> for validation
             var convertedResponse = new ApiResponse<object>
             {
                 StatusCode = response.StatusCode,

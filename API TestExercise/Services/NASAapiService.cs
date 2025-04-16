@@ -3,52 +3,47 @@ using System.Net;
 using System.Text.Json;
 using API_TestExercise.Models;
 using RestSharp;
+using Microsoft.Extensions.Options;
 
 namespace API_TestExercise.Services
 {
-    public class NASAapiService
+    public interface INASAapiService
     {
-        private readonly RestClient _restClient;
-        private const string BaseUrl = "https://api.nasa.gov";
-        private const string ApiKey = "DEMO_KEY";
+        Task<ApiResponse<List<CMEModel>>> GetCMEDataAsync(string startDate, string endDate);
+        Task<ApiResponse<List<FLRModel>>> GetFLRDataAsync(string startDate, string endDate);
+    }
+
+    public class NASAapiService : INASAapiService
+    {
+        private readonly RestClient _restClient; 
+        private readonly string _apiKey;
         private static readonly JsonSerializerOptions JsonOptions = new()
         {
             PropertyNameCaseInsensitive = true
         };
 
-        public NASAapiService()
+        public NASAapiService(IOptions<NASAApiOptions> options)
         {
-            _restClient = new RestClient(BaseUrl);
+            var nasaOptions = options?.Value ?? throw new ArgumentNullException(nameof(options));
+            _apiKey = nasaOptions.ApiKey ?? throw new ArgumentException("NASA API key not configured");
+            _restClient = new RestClient(nasaOptions.BaseUrl);
         }
 
-        // Fetch CME data
         public async Task<ApiResponse<List<CMEModel>>> GetCMEDataAsync(string startDate, string endDate)
+            => await GetDonkiDataAsync<List<CMEModel>>("CME", startDate, endDate);
+
+        public async Task<ApiResponse<List<FLRModel>>> GetFLRDataAsync(string startDate, string endDate)
+            => await GetDonkiDataAsync<List<FLRModel>>("FLR", startDate, endDate);
+
+        private async Task<ApiResponse<T>> GetDonkiDataAsync<T>(string endpoint, string startDate, string endDate)
         {
-            Console.WriteLine($"Fetching CME data from {startDate} to {endDate}");
-            string endpoint = "/DONKI/CME";
-            var queryParams = new Dictionary<string, string>
+            Console.WriteLine($"Fetching {endpoint} data from {startDate} to {endDate}");
+            return await MakeGetRequestAsync<T>($"/DONKI/{endpoint}", new Dictionary<string, string>
             {
                 { "startDate", startDate },
                 { "endDate", endDate },
-                { "api_key", ApiKey }
-            };
-
-            return await MakeGetRequestAsync<List<CMEModel>>(endpoint, queryParams);
-        }
-
-        // Fetch FLR data
-        public async Task<ApiResponse<List<FLRModel>>> GetFLRDataAsync(string startDate, string endDate)
-        {
-            Console.WriteLine($"Fetching FLR data from {startDate} to {endDate}");
-            string endpoint = "/DONKI/FLR";
-            var queryParams = new Dictionary<string, string>
-                {
-                    { "startDate", startDate },
-                    { "endDate", endDate },
-                    { "api_key", ApiKey }
-                };
-
-            return await MakeGetRequestAsync<List<FLRModel>>(endpoint, queryParams);
+                { "api_key", _apiKey }
+            });
         }
 
         // Reusable method for making GET requests
